@@ -1,7 +1,7 @@
 # Mayın Tarlası Oyunu
 
 ## Proje Amaçları
-Bu proje, Mayın Tarlası oyununu Java programlama dili kullanarak oluşturmayı amaçlar. Oyuncular, bir oyun tahtasının üzerinde rastgele yerleştirilmiş mayınları açmadan tüm hücreleri açmayı hedefler.
+Bu proje, Mayın Tarlası oyununu Java programlama dili kullanarak oluşturmayı amaçlar. Oyuncular bir oyun tahtasının üzerinde rastgele yerleştirilmiş mayınları açmadan tüm hücreleri açmayı hedefler.
 
 ## Kullanılan Teknolojiler
 Java
@@ -20,6 +20,6 @@ Bir hücre açtığınızda, aşağıdaki senaryolardan biri gerçekleşebilir:
 - Eğer tıkladığınız hücrede bir mayın yoksa, hücrenin etrafındaki mayınların sayısı görüntülenir.
 - Eğer etrafında hiç mayın yoksa, hücre 0 olarak işaretlenir.
   
-Oyunda amaç, tüm mayınsız hücreleri açarak oyunu kazanmaktır. Tüm mayınsız hücreleri açtığınızda, "You won!" mesajı görüntülenir ve oyun tamamlanır.
+Oyunda amaç tüm mayınsız hücreleri açarak oyunu kazanmaktır. Tüm mayınsız hücreleri açtığınızda "You won!" mesajı görüntülenir ve oyun tamamlanır.
 
 Oyununuzu keyifle oynayın ve mayınlara dikkat edin!
