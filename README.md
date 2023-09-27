@@ -14,7 +14,7 @@ Oyunu başlatmak için MineSweeper.java dosyasını çalıştırın. Oyun başla
 
 Oyun tahtasını oluşturduktan sonra, her hücreyi koordinatlarla açabilirsiniz. Örneğin, satır 3 sütun 2 girdisiyle bir hücre açabilirsiniz.
 
-Bir hücre açtığınızda, aşağıdaki senaryolardan biri gerçekleşebilir:
+Bir hücre açtığınızda aşağıdaki senaryolardan biri gerçekleşebilir:
 
 - Eğer tıkladığınız hücrede bir mayın varsa, oyunu kaybedersiniz ve "Game Over." mesajı görüntülenir.
 - Eğer tıkladığınız hücrede bir mayın yoksa, hücrenin etrafındaki mayınların sayısı görüntülenir.
