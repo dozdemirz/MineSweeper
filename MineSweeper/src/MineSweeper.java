@@ -14,7 +14,7 @@ public class MineSweeper {
     ArrayList<String> selectedCells = new ArrayList<>();
 
     // Kurucu metot
-    MineSweeper(int rowNumber, int colNumber) {
+    MineSweeper(int rowNumber, int colNumber) {  //DEĞERLENDİRME 5
         this.rowNumber = rowNumber;
         this.colNumber = colNumber;
         this.map = new String[rowNumber][colNumber];
@@ -31,13 +31,13 @@ public class MineSweeper {
     }
 
     //Oyunu başlatmak için olan metot
-    public void gameStart() {
+    public void gameStart() {    //DEĞERLENDİRME 6
         while (game) {
             coordinatesCheck();
         }
     }
 
-    public void placingMines(String[][] mines) {
+    public void placingMines(String[][] mines) {        //DEĞERLENDİRME 8
         int mineCount = (this.rowNumber * this.colNumber) / 4;
         Random r = new Random();
         while (mineCount > 0) {
@@ -66,7 +66,7 @@ public class MineSweeper {
         counter++;
         check = true;
         while (check) {
-            System.out.println("Enter row number you want to play (Between 1-" + rowNumber + ") : ");
+            System.out.println("Enter row number you want to play (Between 1-" + rowNumber + ") : ");   //DEĞERLENDİRME 9
             row = input.nextInt() - 1;
             System.out.println("Enter column number you want to play (Between 1-" + colNumber + ") : ");
             col = input.nextInt() - 1;
@@ -76,14 +76,14 @@ public class MineSweeper {
             if (selectedCells.contains(selectedCell)) {  //Oyunu oynarken aynı koordinatları seçtiğimde henüz açılmamış koordinat varken bile kazandığımı düşünüyordu. O yüzden aynı koordinatların seçilmesini önceden seçilenleri bir array'e atarak engelledim
                 System.out.println("You already selected this cell. Please try again.");
             } else if (row < 0 || row >= rowNumber || col < 0 || col >= colNumber) {
-                System.out.println("Wrong coordinates. Please try again."); //Eğer girilen koordinatlar oyunun oynandığı board'ın büyüklüğünden fazlaysa veya olması gerekenden küçükse hata veriyoruz
+                System.out.println("Wrong coordinates. Please try again."); //DEĞERLENDİRME 10.  // Eğer girilen koordinatlar oyunun oynandığı board'ın büyüklüğünden fazlaysa veya olması gerekenden küçükse hata veriyoruz
             } else {
                 check = false;
                 selectedCells.add(selectedCell);
             }
         }
-        if ((map[row][col]).equals(" * ")) {
-            System.out.println("Game Over. :("); //Eğer kullanıcı mayına basarsa oyunu direkt bitiren bölge
+        if ((map[row][col]).equals(" * ")) { //DEĞERLENDİRME 13
+            System.out.println("Game Over. :("); //DEĞERLENDİRME 15.  Eğer kullanıcı mayına basarsa oyunu direkt bitiren bölge
             printMap(map);
             game = false;
         } else {
@@ -91,19 +91,19 @@ public class MineSweeper {
                 for (int c = -1; c < 2; c++) {
                     if ((row + r) >= 0 && (row + r) < rowNumber && (col + c) >= 0 && (col + c) < colNumber) {
                         if ((map[row + r][col + c]).equals(" * ")) {
-                            surroundingMine++;
+                            surroundingMine++; //DEĞERLENDİRME 12. Zaten surroundingMine değişkenine başta 0 değeri verdiğim için etrafında mayın yoksa 0 yazdırıyor.
                         }
                     }
                 }
             }
-            gameBoard[row][col] = " " + surroundingMine + " ";
+            gameBoard[row][col] = " " + surroundingMine + " "; //DEĞERLENDİRME 11
             openedPlace++;                          //Mayına basmayıp etraftaki mayınların sayısını yazdırdığımız her döngüde openedPlace'i 1 arttırıyoruz
             if (openedPlace == size - mineCount) {  //Bu sayede açılabilecek tüm mayınsız alanlar açıldığında kazandığımızı sorgulayabileceğiz
                 isWin = true;
             }
-            if (isWin) {
+            if (isWin) {        //DEĞERLENDİRME 14
                 game = false;
-                System.out.println("You won!!!!");
+                System.out.println("You won!!!!");  //DEĞERLENDİRME 15
                 printMap(map);
             } else {
                 printMap(gameBoard);
